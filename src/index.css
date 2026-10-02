@@ -1,0 +1,31 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "DM Sans", system-ui, sans-serif;
+  --font-serif: "Fraunces", Georgia, serif;
+  --font-brush: "Kaushan Script", "Brush Script MT", cursive;
+  --color-ink: #3b1024;
+  --color-mute: #8b6b7b;
+}
+
+body {
+  margin: 0;
+  background: #fff;
+  color: var(--color-ink);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+}
+h1, h2, h3 { font-family: var(--font-serif); }
+:focus-visible { outline: 3px solid #ec4899; outline-offset: 2px; }
+
+/* slow pink wash behind the landing hero */
+.wash {
+  background:
+    radial-gradient(60% 80% at 15% 20%, #fbcfe8 0, transparent 60%),
+    radial-gradient(50% 70% at 85% 30%, #fce7f3 0, transparent 60%),
+    #fff5f8;
+  background-size: 140% 140%;
+  animation: drift 16s ease-in-out infinite alternate;
+}
+@keyframes drift { to { background-position: 100% 60%; } }
+@media (prefers-reduced-motion: reduce) { .wash { animation: none; } }
