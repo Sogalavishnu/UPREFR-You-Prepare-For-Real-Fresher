@@ -31,7 +31,9 @@ function SetupNotice() {
 export default function App() {
   const { pathname } = useLocation()
   const { configured } = useAuth()
-  useEffect(() => window.scrollTo(0, 0), [pathname])
+  useEffect(() => {
+    window.scrollTo(0, 0)
+  }, [pathname])
 
   if (!configured) return <SetupNotice />
 
